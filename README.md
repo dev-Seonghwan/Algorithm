@@ -12,5 +12,7 @@
  
 ## 📌 [백준](https://www.acmicpc.net/) 
 
- [![Solved.ac Profile](http://mazassumnida.wtf/api/generate_badge?boj=norte0190)](https://solved.ac/norte0190)
+ [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=norte0190)](https://solved.ac/norte0190)
+ 
+ 
  

@@ -6,21 +6,16 @@ class Solution {
 
         HashMap<Integer, Integer> rankPositionMap = new HashMap<>();
         for (int i = 0; i < rank.length; i++) {
+            if (attendance[i])
                 rankPositionMap.put(rank[i], i);
         }
-        
-        List<Integer> collect = new ArrayList<>();
-        for (int i = 0; i < rank.length; i++) {
-            if (attendance[i])
-                collect.add(rank[i]);
-        }
-        
-        Collections.sort(collect);
-        
-        int firstPrize = rankPositionMap.getOrDefault(collect.get(0),0);
-        int secondPrize = rankPositionMap.getOrDefault(collect.get(1),0);
-        int thirdPrize = rankPositionMap.getOrDefault(collect.get(2),0);
 
-        return firstPrize*10000 + secondPrize*100 + thirdPrize;
+        List<Integer> collect = rankPositionMap.values().stream().limit(3).collect(Collectors.toList());
+
+        int firstPrize = collect.get(0);
+        int secondPrize = collect.get(1);
+        int thirdPrize = collect.get(2);
+
+        return firstPrize*10000 + secondPrize*100 + thirdPrize;        
     }
 }
